@@ -9,13 +9,15 @@
 <body>
   <h1>This is Stuff</h1>
   @{
-    for (int i = 0; i < 5; i++)
+    string[] stuff = new string[] {"Cameron", "Kyle", "Mark", "Stephanie", "Michael"};
+    for (int i = 0; i < stuff.Length; i++)
     {
-      ViewBag.data.Add("#" + (i + 1).ToString() + " String");
-    }
-    for (int i = 0; i < ViewBag.data.Count; i++)
-    {
-      <p>@ViewBag.data[i]</p>
+      if (stuff[i].StartsWith("c") || stuff[i].StartsWith("C"))
+      {
+        <p style="color: red;">@stuff[i]</p>
+      } else {
+        <p>@stuff[i]</p>
+      }
     }
   }
 </body>
